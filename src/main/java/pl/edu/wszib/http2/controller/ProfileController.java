@@ -32,31 +32,31 @@ public class ProfileController {
   @GetMapping("/get")
   public String getProfileView(@RequestParam Integer id, Model model) {
     model.addAttribute("profile", profileService.get(id));
-    return "get-profile";
+    return "profile/get-profile";
   }
 
   @GetMapping("/list")
   public String listProfilesView(Model model) throws ParseException {
     model.addAttribute("profiles", profileService.list());
-    return "list-profiles";
+    return "profile/list-profiles";
   }
 
   @GetMapping("/create")
   public String createProfileView(Model model) {
     model.addAttribute("newProfile", new Profile());
-    return "create-profile";
+    return "profile/create-profile";
   }
 
   @GetMapping("/update")
   public String updateProfileView(@RequestParam Integer id, Model model) {
     model.addAttribute("updateProfile", profileService.get(id));
-    return "update-profile";
+    return "profile/update-profile";
   }
 
   @GetMapping("/delete")
   public String deleteProfileView(@RequestParam Integer id, Model model) {
     model.addAttribute("profile", profileService.get(id));
-    return "delete-profile";
+    return "profile/delete-profile";
   }
 
   @PostMapping("/create")
@@ -68,7 +68,7 @@ public class ProfileController {
     if(bindingResult.hasErrors()) {
       model.addAttribute(newProfile);
       model.addAttribute("org.springframework.validation.BindingResult.newProfile", bindingResult);
-      return "create-profile";
+      return "profile/create-profile";
     }
 
     newProfile.setZdjecie(multipartFile.getBytes());
@@ -81,7 +81,7 @@ public class ProfileController {
     if(bindingResult.hasErrors()) {
       model.addAttribute(updateProfile);
       model.addAttribute("org.springframework.validation.BindingResult.updateProfile", bindingResult);
-      return "update-profile";
+      return "profile/update-profile";
     }
 
     if(multipartFile.getBytes().length != 0) {
