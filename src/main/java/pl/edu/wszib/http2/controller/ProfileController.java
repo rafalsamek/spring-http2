@@ -12,7 +12,7 @@ import pl.edu.wszib.http2.service.ProfileService;
 import pl.edu.wszib.http2.service.exception.NotFoundException;
 import pl.edu.wszib.http2.service.model.Profile;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
