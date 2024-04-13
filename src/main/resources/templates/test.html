@@ -8,5 +8,8 @@
 <h1>Hello <span th:text="${name}"></span></h1>
 <h2 th:if="${show}">Should show</h2>
 <h2 th:unless="${show}">Should not show</h2>
+<div th:each="color : ${colors}">
+    <span th:text="${color}"></span>
+</div>
 </body>
 </html>

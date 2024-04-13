@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Arrays;
+
 @Controller
 @RequestMapping("/test")
 public class TestController {
@@ -14,6 +16,7 @@ public class TestController {
     public String test(Model model) {
         model.addAttribute("name", "Rafał");
         model.addAttribute("show", true);
+        model.addAttribute("colors", Arrays.asList("Blue","Yellow", "Red"));
         return "test";
     }
 }
