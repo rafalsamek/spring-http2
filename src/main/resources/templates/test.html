@@ -9,7 +9,11 @@
 <h2 th:if="${show}">Should show</h2>
 <h2 th:unless="${show}">Should not show</h2>
 <div th:each="color : ${colors}">
-    <span th:text="${color}"></span>
+    <div th:switch="${color}">
+        <span th:case="${'Blue'}" th:style="${'color: blue'}" th:text="${color}"></span>
+        <span th:case="${'Yellow'}" th:style="${'color: yellow'}" th:text="${color}"></span>
+        <span th:case="${'Red'}" th:style="${'color: red'}" th:text="${color}"></span>
+    </div>
 </div>
 </body>
 </html>
