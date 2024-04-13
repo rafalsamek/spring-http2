@@ -17,7 +17,7 @@ public class Profile implements CrudResource<Integer> {
   @Size(min = 3, max = 50)
   @Pattern(regexp = "[a-zA-Z]+")
   private String nazwisko;
-  @DateTimeFormat(pattern = "yyyy-MD-dd")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   @NotBlank
   private String dataUrodzenia;
   private byte[] zdjecie;

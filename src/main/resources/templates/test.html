@@ -16,5 +16,7 @@
         <span th:case="${'Red'}" th:style="${'color: red'}" th:text="${color}"></span>
     </div>
 </div>
+<span th:text="${#dates.format(now, 'MM-dd-yyyy hh:mm:ss')}"></span>
+
 </body>
 </html>
