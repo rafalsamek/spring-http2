@@ -9,7 +9,11 @@
 </head>
 <body>
     <div class="container">
-
+        <form method="POST" th:action="@{/todos/create}" th:object="${newTodo}">
+            <input class="form-control" type="text" th:field="*{zadanie}">
+            <input class="form-control" type="date" th:field="*{termin}">
+            <input class="btn btn-primary" type="submit">
+        </form>
     </div>
 </body>
 </html>
