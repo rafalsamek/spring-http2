@@ -17,6 +17,7 @@
                     <td>Zadanie</td>
                     <td>Status</td>
                     <td>Termin</td>
+                    <td>Actions</td>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,9 @@
                     <td th:text="${todo.zadanie}"></td>
                     <td th:text="${todo.status}"></td>
                     <td th:text="${todo.termin}"></td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{/todos/delete(id=${todo.id})}">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
