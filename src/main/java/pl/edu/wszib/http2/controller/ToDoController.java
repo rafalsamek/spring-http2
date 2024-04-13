@@ -12,7 +12,7 @@ import pl.edu.wszib.http2.service.model.ToDo;
 import pl.edu.wszib.http2.service.model.ToDoStatus;
 
 @Controller
-@RequestMapping("/todos")
+@RequestMapping("/todo")
 public class ToDoController {
 
     @Autowired
@@ -34,13 +34,13 @@ public class ToDoController {
     public String createAction(ToDo newTodo, Model model) {
         newTodo.setStatus(ToDoStatus.NEW);
         toDoService.create(newTodo);
-        return "redirect:/todos";
+        return "redirect:/todo";
     }
 
     @GetMapping("/delete")
     public String delete(@RequestParam Integer id) {
         toDoService.delete(id);
-        return "redirect:/todos";
+        return "redirect:/todo";
     }
 
     @GetMapping("/update")
@@ -53,6 +53,6 @@ public class ToDoController {
     @PostMapping("/update")
     public String updateAction(ToDo todo, Model model) {
         toDoService.update(todo);
-        return "redirect:/todos";
+        return "redirect:/todo";
     }
 }

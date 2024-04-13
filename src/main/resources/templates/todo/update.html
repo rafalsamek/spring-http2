@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <form method="POST" th:action="@{/todos/update}" th:object="${todo}">
+        <form method="POST" th:action="@{/todo/update}" th:object="${todo}">
             <input class="form-control" type="text" th:field="*{id}" readonly>
             <input class="form-control" type="text" th:field="*{zadanie}">
             <input class="form-control" type="date" th:field="*{termin}">

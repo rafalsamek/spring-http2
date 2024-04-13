@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <a class="btn btn-primary" th:href="@{/todos/create}">Create</a>
+        <a class="btn btn-primary" th:href="@{/todo/create}">Create</a>
         <table class="table">
             <thead>
                 <tr>
@@ -27,8 +27,8 @@
                     <td th:text="${todo.status}"></td>
                     <td th:text="${todo.termin}"></td>
                     <td>
-                        <a class="btn btn-warning" th:href="@{/todos/update(id=${todo.id})}">Update</a>
-                        <a class="btn btn-danger" th:href="@{/todos/delete(id=${todo.id})}">Delete</a>
+                        <a class="btn btn-warning" th:href="@{/todo/update(id=${todo.id})}">Update</a>
+                        <a class="btn btn-danger" th:href="@{/todo/delete(id=${todo.id})}">Delete</a>
                     </td>
                 </tr>
             </tbody>
