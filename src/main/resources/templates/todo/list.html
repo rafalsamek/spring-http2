@@ -27,6 +27,7 @@
                     <td th:text="${todo.status}"></td>
                     <td th:text="${todo.termin}"></td>
                     <td>
+                        <a class="btn btn-warning" th:href="@{/todos/update(id=${todo.id})}">Update</a>
                         <a class="btn btn-danger" th:href="@{/todos/delete(id=${todo.id})}">Delete</a>
                     </td>
                 </tr>

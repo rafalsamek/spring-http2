@@ -9,7 +9,15 @@
 </head>
 <body>
     <div class="container">
-
+        <form method="POST" th:action="@{/todos/update}" th:object="${todo}">
+            <input class="form-control" type="text" th:field="*{id}" hidden="hidden">
+            <input class="form-control" type="text" th:field="*{zadanie}">
+            <input class="form-control" type="date" th:field="*{termin}">
+            <select class="form-control" th:field="*{status}">
+                <option th:each="status : ${statusList}" th:value="${status}" th:text="${status}"></option>
+            </select>
+            <input class="btn btn-primary" type="submit">
+        </form>
     </div>
 </body>
 </html>

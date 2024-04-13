@@ -11,9 +11,6 @@ import pl.edu.wszib.http2.service.ToDoService;
 import pl.edu.wszib.http2.service.model.ToDo;
 import pl.edu.wszib.http2.service.model.ToDoStatus;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 @RequestMapping("/todos")
 public class ToDoController {
@@ -43,6 +40,19 @@ public class ToDoController {
     @GetMapping("/delete")
     public String delete(@RequestParam Integer id) {
         toDoService.delete(id);
+        return "redirect:/todos";
+    }
+
+    @GetMapping("/update")
+    public String update(@RequestParam Integer id, Model model) {
+        model.addAttribute("todo", toDoService.get(id));
+        model.addAttribute("statusList", ToDoStatus.values());
+        return "todo/update";
+    }
+
+    @PostMapping("/update")
+    public String updateAction(ToDo todo, Model model) {
+        toDoService.update(todo);
         return "redirect:/todos";
     }
 }
